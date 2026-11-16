@@ -1,65 +1,43 @@
-<!--tauceti-status:v1 {"roadmap":"SymplecticGeometry","to_sha":"e583e15d3be177d86491854d1db508f6edfe5ee7","ts":"2026-11-07T20:34:01+00:00"}-->
+<!--tauceti-status:v1 {"roadmap":"SymplecticGeometry","to_sha":"aa6e43e14b2556add36c8149e543f059a45926d3","ts":"2026-11-13T23:20:12Z"}-->
+<!--tauceti-coverage:v1 {"layers":[{"id":"Layer 1","remaining":"the fixed-locus theorem, equivariant Darboux and the weight normal form on manifolds, and the rank-one coroot normalization","state":"partial"},{"id":"Layer 2","remaining":"Morse-Bott property of moment components on manifolds, connected levels, equivariant Thom/Euler classes and rational perfection","state":"partial"},{"id":"Layer 3","remaining":"torus and Kirwan convexity, Kostant projection convexity, and the word121 manifold, moment map and exact image","state":"partial"},{"id":"Layer 4","remaining":"the Duistermaat-Heckman measure for proper moment maps, its polynomial density, level bundles and reduced classes","state":"partial"},{"id":"Layer 5","remaining":"the Delzant quotient and classification, toric fibre and vertex theorems, cohomology, and the weighted orbifold charts and area","state":"partial"}],"readme_sha":"b5d66982a18715f926ed5d7faf82dcbf25eb12128e840da286e31b3cc140a2d3","roadmap":"SymplecticGeometry/ConvexityToric","to_sha":"aa6e43e14b2556add36c8149e543f059a45926d3"}-->
 # Status: SymplecticGeometry
 
-This file documents the status of the SymplecticGeometry roadmap up until `e583e15` (2026-11-07T20:34:01+00:00). There may have been subsequent updates.
+This file documents the status of the SymplecticGeometry roadmap up until `aa6e43e` (2026-11-13T23:20:12Z). There may have been subsequent updates.
 
 It is generated, and its prose is not security-validated; see
 https://github.com/TauCetiProject/TauCetiProgress for what that means.
 
 ## Where this roadmap stands
 
-**At a glance.** The cotangent phase space and the basic layer of contact geometry are in place. Contact forms, Reeb and contact Hamiltonian dynamics, contactization and Legendrians are all built. The matrix polar package, positive-period circles and the suspension carrier are well advanced. Moment maps, reduction, most convexity, Liouville–Arnold and every neighbourhood or stability theorem have not begun, or exist only as ingredients.
+**At a glance.** Done: the cotangent phase space, the matrix polar and Cartan package, and Liouville's theorem. Contact forms are done through Darboux and Gray stability. Partial: Liouville–Arnold, which has local action-angle coordinates but no global chart; moment maps and flux; generating functions; Lagrangian mechanics; and the foundations of every ConvexityToric layer. Missing: every theorem that needs a quotient manifold, namely regular reduction, torus convexity, Duistermaat–Heckman and Delzant classification.
 
 ### Named results
 
-- **The cotangent bundle is symplectic**: ω = −dλ on T*M is [closed and nondegenerate](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Cotangent/Bundle/Liouville.html#TauCeti.CotangentBundle.isSymplectic_symplecticForm).
-- **The contact criteria**: a one-form on a (2n+1)-manifold is contact exactly when [α ∧ (dα)ⁿ vanishes nowhere](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Volume.html#TauCeti.SmoothForm.isContactForm_iff_wedge_wedgePow_apply_ne_zero), and exactly when [the Levi form of its kernel is nondegenerate](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Levi.html#TauCeti.SmoothForm.isContactForm_iff_forall_bijective_distributionLeviForm).
-- **Contactization**: on W × ℝ the form dz − θ [is contact exactly when −dθ is nondegenerate](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Contactization.html#TauCeti.SmoothForm.isContactForm_contactization_iff). On the one-jet space T*M × ℝ, [one-jets of functions are Legendrian embeddings](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/OneJet.html#TauCeti.CotangentBundle.isLegendrianEmbedding_contactization_liouvilleForm).
-- **Connectedness of Sp(2n, ℝ)**: the positive polar factor of a symplectic matrix contracts inside the group, so [the real symplectic group is path connected](https://taucetiproject.org/docs/TauCeti/Analysis/Matrix/SymplecticGroup/Connected.html#Matrix.isPathConnected_symplecticGroup).
-- **The Schur–Horn theorem**: the diagonals of the unitary conjugates of diag(w) are [exactly the convex hull of the rearrangements of w](https://taucetiproject.org/docs/TauCeti/Analysis/Matrix/UnitaryGroup/SchurHorn.html#Matrix.range_re_diag_unitary_mul_diagonal_mul_star). Majorization, via [Rado's theorem](https://taucetiproject.org/docs/TauCeti/Analysis/Convex/PermutationOrbit.html#TauCeti.mem_convexHull_range_comp_perm_iff), gives an equivalent form.
+- **The contact Darboux theorem**: around every point of a contact manifold there is a chart to ℝⁿ × ℝⁿ × ℝ in which [the contact form is a positive multiple of dz − Σ pᵢ dqᵢ](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Darboux/Manifold.html#TauCeti.SmoothForm.IsContactForm.exists_darbouxChart).
+- **Gray's stability theorem**: on a compact manifold, [the Gray flow carries a smooth family of contact forms to positive rescalings of one another](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Gray.html#TauCeti.SmoothForm.mpullback_grayDiffeomorph_apply). A [relative version](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Gray.html#TauCeti.SmoothForm.exists_partialDiffeomorph_mpullback_eq_smul) needs no compactness and fixes the points where the contact hyperplane is stationary.
+- **Local action-angle coordinates**: near a compact component of a level of Poisson-commuting functions that consists of regular points, [action-angle coordinates exist locally](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Hamiltonian/Liouville/Action/Chart.html#TauCeti.SmoothTwoForm.IsSymplectic.exists_isLocalDiffeomorphAt_eval₂_mfderiv_eq_of_isCompact), and [such components are tori](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Hamiltonian/Liouville/Torus.html#TauCeti.SmoothTwoForm.IsSymplectic.nonempty_homeomorph_unitAddTorus).
+- **Liouville's theorem**: [every time-t map of a complete Hamiltonian flow preserves the Liouville measure](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Manifold/LiouvilleMeasure.html#TauCeti.SmoothTwoForm.IsSymplectic.measurePreserving_globalFlowDiffeomorph_liouvilleMeasure) |σⁿ/n!|.
+- **The Schur–Horn theorem**: the diagonals of the unitary conjugates of diag(w) are [exactly the convex hull of the rearrangements of w](https://taucetiproject.org/docs/TauCeti/Analysis/Matrix/UnitaryGroup/SchurHorn.html#Matrix.range_re_diag_unitary_mul_diagonal_mul_star).
 
 ### Notable definitions and infrastructure
 
-- **Contact Hamiltonian vector fields** [`contactHamiltonianVectorField`](https://taucetiproject.org/docs/TauCeti/Geometry/Contact/Hamiltonian.html#TauCeti.SmoothForm.contactHamiltonianVectorField) invert the contact flat map; the Reeb field is the case f = 1. Contact flows and the Jacobi bracket rest on this.
-- **The smooth mapping torus** [`SmoothMappingTorus`](https://taucetiproject.org/docs/TauCeti/Geometry/Manifold/Instances/MappingTorus.html#TauCeti.SmoothMappingTorus) carries its suspension flow, time and fibre forms, orientation and embedded closed orbits, which is the carrier S0–S2 need.
-- **The positive-period circle package** starts from the [time form dt_p](https://taucetiproject.org/docs/TauCeti/Geometry/Manifold/DifferentialForm/AddCircle.html#AddCircle.timeForm) and extends to tori and the [total family of circles](https://taucetiproject.org/docs/TauCeti/Geometry/Manifold/Instances/CircleFamily.html#TauCeti.CircleFamily) with its forms β, η and dp ∧ η.
+- **The cotangent bundle and its lattice quotients.** ω = −dλ on T*M is [closed and nondegenerate](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Cotangent/Bundle/Liouville.html#TauCeti.CotangentBundle.isSymplectic_symplecticForm). Dividing by a lattice of closed one-forms gives [a regular Lagrangian torus fibration](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Cotangent/Bundle/LatticeQuotient.html#TauCeti.CotangentBundle.LatticeQuotient.isLagrangianTorusFibration_proj) T*B/Λ → B, the model for a global action-angle chart.
+- **Flux.** The flux of an isotopy is a homomorphism, and on a compact symplectic manifold [every first de Rham class is a flux](https://taucetiproject.org/docs/TauCeti/Geometry/Symplectic/Flux/Flow.html#TauCeti.Diffeotopy.exists_flux_eq).
+- **Delzant polytopes and the Delzant level.** The zero level of the kernel torus's moment map is [a compact smooth manifold](https://taucetiproject.org/docs/TauCeti/Geometry/Toric/Delzant/Level.html#TauCeti.Toric.IsDelzant.isManifold_delzantLevel) with a free torus action.
 
 ### Roadmap coverage
 
-The evidence for the latest window was truncated, so some layers may be further along than stated.
-
-- **CotangentLagrangian.**
-  - C1: items 1–2 are done, and item 3 now includes the equivariant cotangent-lifted action. General pullback relations, open restriction and T*(M×N) are missing.
-  - C2: only the linear algebra is done.
-  - C2.0: largely done. The ambient polar-coordinate diffeomorphisms and the SL(2,ℂ) ±I equivariance are not in evidence.
-  - C2.1: partial. Connectedness, Sp-polar preservation, the Killing form and the Cartan involution are in. Realification, the intersection identities, maximal compactness and the adjoint comparison are not.
-  - C2.2: partial. It has only Kodaira–Thurston topology.
-  - C3: untouched.
-  - C4: only a relative Poincaré lemma on convex neighbourhoods.
-- **ContactGeometry.**
-  - CG1: essentially done.
-  - CG2: done except the worked eˣ example and the separation of the contactomorphism notions.
-  - CG3: ingredients only.
-  - CG4–CG6: partial. Contactization, the sphere, the Legendrian API, conformal symplectic normal spaces and the Jacobi bracket are in. Symplectization, the neighbourhood theorems and the symplectization comparison are missing.
-- **HamiltonianReduction.**
-  - R1: partial. It has fundamental vector fields and stabilizers, but no moment maps.
-  - R2: partial. It has the algebraic KKS form and the so(3) and Heisenberg models, but no orbit manifold.
-  - R1a and R2a–R5: untouched.
-- **ConvexityToric.**
-  - T3: only the U(n) Schur–Horn cases are done.
-  - T1, T2, T4 and T5: untouched.
-- **IntegrableSystems.**
-  - I2.0: largely done. The uniform Cᵏ estimates on compact period sectors are not in evidence.
-  - I1–I4: untouched, beyond rank tools and Kronecker's density theorem.
-- **Suspensions.**
-  - S0: partial. Ω is not yet shown symplectic.
-  - S1: partial. Closed orbits and their homology classes are in, but not the block structure or the areas.
-  - S2: untouched.
+- **CotangentLagrangian.** C1 is done except for products and pullback along maps that are not diffeomorphisms. C2.0 is largely done. C2.1 is partial: the [Cartan decomposition of Sp(2n, ℝ)](https://taucetiproject.org/docs/TauCeti/Analysis/Matrix/Cartan/Realify.html#TauCeti.GLSymplectic.cartanHomeomorph) through realified U(n) is in, but maximality is missing. C2.2 is partial: the non-Kähler argument for Kodaira–Thurston is missing. C3 is partial: generating functions, their composition, and the next-collision map of a convex billiard are in. C4 has only the point-germ relative Darboux theorem and the relative Poincaré lemma.
+- **ContactGeometry.** CG1–CG2 are essentially done. CG3 is largely done. Not established: Darboux with exact pullback of the standard form, and relative Gray for distributions without a chosen family of forms. CG4–CG6 are partial, and the Legendrian neighbourhood theorems are missing.
+- **HamiltonianReduction.** R1, R1a, R2 and R3 are partial. Torus moment maps are unique up to constants, cotangent lifts of torus actions are Hamiltonian, and regular toric levels are Lagrangian, but no reduced manifold exists. R2a, R4 and R5 are untouched.
+- **ConvexityToric.** All five layers are partial. T1 gained smooth Bochner linearization and an equivariant Darboux theorem on vector spaces. T3 gained the word121 hexagon, computed from the fixed values.
+- **IntegrableSystems.** I2.0 is largely done. I1–I4 are partial: I2 has local action-angle coordinates, and I3 has the Legendre transform, Hamilton's equations for hyperregular Lagrangians and the extended phase space. I5 has only the generating-function equation of an area-preserving strip map.
+- **Suspensions.** S0 and S1 are partial. S2 is untouched.
 
 ## The frontier
 
-- **Contact Darboux and Gray stability (CG3).** The contact-Moser vector field and the pointwise linear normal form are in place. What remains is integrating the Moser flow on a shrunken chart, and the relative Gray theorem.
-- **The suspension symplectic form (S0).** Prove Ω = ds∧dt + ω_v closed and nondegenerate on S¹ × Y_φ. This opens S1's block structure and the orbit-torus areas.
-- **Group-level moment maps (R1).** Fundamental vector fields and smooth cotangent-lifted actions are ready. Next come equivariant moment maps and the cotangent-lift example μ(q,p)(ξ) = p(ξ_Q q).
-- **Maximal compactness and realification (C2.1).** The lemma that a compact subgroup's only positive-definite element is the identity already exists. Still needed are the realify map, the intersection identities, and the maximality of U(n) in GL(n,ℂ) and in Sp(2n,ℝ).
-- **Kodaira–Thurston as a symplectic non-Kähler manifold (C2.2).** The topology is done. Still needed are the symplectic form, and the odd-b₁ obstruction, which depends on ComplexKahlerGeometry's Hodge parity theorem.
+- **Regular reduction (R3).** What remains is the smooth structure and symplectic form on μ⁻¹(0)/G for a free proper action. The Delzant quotient and Duistermaat–Heckman both wait on this.
+- **The Delzant quotient (T5).** The level is a compact manifold with a free kernel-torus action. Still needed: the quotient manifold, its reduced form, the identification of its moment image with Δ, and uniqueness.
+- **A global action-angle chart (I2).** The local coordinates, the torus theorem and integral-affine uniqueness are in. They still have to be assembled into one symplectomorphism from an action domain times the whole torus.
+- **Fixed loci and equivariant normal forms on manifolds (T1).** Bochner linearization and the equivariant Darboux theorem on vector spaces are in. Missing: fixed loci as embedded symplectic submanifolds, equivariant Darboux on manifolds, and the weight normal form.
+- **The word121 moment polygon (T3).** The hexagon and its vertices are computed from the fixed-point table. The Bott–Samelson manifold, its symplectic form, its moment map and the identification of the image with this hexagon are all missing.
