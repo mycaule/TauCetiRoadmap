@@ -118,6 +118,12 @@ Example format:
 - Clear layer structure (1: BBGKY, 2: Boltzmann hierarchy, 3: bounds, 4: trees, 5: convergence)
 - Specific problem statements (Lanford extension, global existence, boundary conditions)
 
+### From CubicSzegoEquation (PDEs/Integrable Systems)
+- Focused scope on a specific PDE
+- Clear connection to operator theory (Hankel operators)
+- Specific problem statements (global well-posedness, norm growth, complete integrability)
+- Comprehensive bibliography spanning PDEs, operator theory, and harmonic analysis
+
 ## Cross-Roadmap Connections
 
 While the three example roadmaps are in different mathematical domains, they share:
@@ -240,5 +246,5 @@ When creating or reviewing a roadmap:
 ## Maintenance
 
 This guide should be updated as new patterns emerge and best practices evolve.
-The three example roadmaps (StableMatching, RibbonKnots, BoltzmannGradLimitAndLanford)
+The four example roadmaps (StableMatching, RibbonKnots, BoltzmannGradLimitAndLanford, CubicSzegoEquation)
 serve as reference implementations of these principles.
